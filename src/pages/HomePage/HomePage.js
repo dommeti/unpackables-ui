@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import './HomePage.scss'
 import useFetch from '../../hooks/useFetch'
 
@@ -14,8 +13,9 @@ export default function HomePage() {
 			<div className='nugget-masonry'>
 				{loading ? (
 					<p>Loading...</p>
-				) : (
+				) : error ? (<p>Error</p>) : (
 					<div>
+						<p>Number of items: {nuggets.length}</p>
 						{nuggets.map(item => (
 							<div key={item.id} className="nugget-card">
 								{/* <h2>{item.attributes.Title}</h2>
