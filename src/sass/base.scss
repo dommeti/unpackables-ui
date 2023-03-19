@@ -1,0 +1,9 @@
+// Theme and helper methods (mixins, etc)
+// @import '../../sass/_mixins'; (commenting out and leaving original file in case we need in future)
+@import '../sass/colors';
+@import '../sass/variables';
+
+body {
+	background-color: #FAF9F5;
+	transition: 0.2s;
+}

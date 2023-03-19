@@ -1,0 +1,53 @@
+@import '../../sass/base.scss';
+
+.header {
+	max-width: $width-desktop;
+	margin: 0 auto;
+	padding: 20px 16px;
+}
+
+.nugget-masonry {
+	column-count: 3;
+	transition: all .5s ease-in-out;
+	column-gap: 30px;
+	column-fill: initial;
+	max-width: $width-desktop;
+	margin: 0 auto;
+	padding: 0 16px;
+
+	/* Masonry on medium-sized screens */
+	@media only screen and (min-width: 768px) {
+		column-count: 3;
+	}
+
+	/* Masonry on small screens */
+	@media only screen and (max-width: 767px) and (min-width: 540px) {
+		column-count: 2;
+	}
+
+	/* Masonry on small screens */
+	@media only screen and (max-width: 539px) {
+		column-count: 1;
+	}
+
+	.nugget-card {
+		background-color: #fff;
+		margin-bottom: 30px;
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+		border-radius: $border-radius-default;
+		overflow: hidden;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+		&:hover {
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 16px 0px, rgba(0, 0, 0, 0.06) 0px 1px 8px 0px;
+		}
+
+		.youtube-iframe {
+			// fix for youtube thumbnail not filling up the height of the card
+			margin-bottom: -4px;
+		}
+	}
+
+}
