@@ -1,18 +1,27 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 // page and layout imports
 import HomePage from './pages/HomePage/HomePage'
 import Header from './components/Header/Header'
 
+// apollo client
+const client = new ApolloClient({
+	uri: 'http://localhost:1337/api/nuggets',
+	cache: new InMemoryCache()
+})
+
 function App() {
 	return (
 		<div className='App'>
 			<Router>
-				<Header />
-				<Routes>
-					<Route exact path="/" element={<HomePage />} />
-				</Routes>
+				<ApolloProvider client={client}>
+					<Header />
+					<Routes>
+						<Route exact path="/" element={<HomePage />} />
+					</Routes>
+				</ApolloProvider>
 			</Router>
 		</div>
 	)
