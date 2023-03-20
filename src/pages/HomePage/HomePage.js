@@ -10,31 +10,33 @@ export default function HomePage() {
 
 	return (
 		<React.Fragment>
-			<div className='nugget-masonry'>
-				{loading ? (
-					<p>Loading...</p>
-				) : error ? (<p>Error</p>) : (
-					<div>
-						<p>Number of items: {nuggets.length}</p>
-						{nuggets.map(item => (
-							<div key={item.id} className="nugget-card">
-								{/* <h2>{item.attributes.Title}</h2>
+			<div className='main-content'>
+				<p>Number of items: {nuggets.length}</p>
+				<div className='nugget-masonry'>
+					{loading ? (
+						<p>Loading...</p>
+					) : error ? (<p>Error</p>) : (
+						<div>
+							{nuggets.map(item => (
+								<div key={item.id} className="nugget-card">
+									{/* <h2>{item.attributes.Title}</h2>
 										<h3>{item.attributes.Source}</h3> */}
-								{/* <Link to={item.attributes.URL} target='_blank'>{item.attributes.URL}</Link> */}
-								<div style={{ display: 'flex', justifyContent: 'center' }}>
-									{item.attributes.Source === 'Twitter' ? <TwitterEmbed placeholderDisabled url={item.attributes.URL} width="100%" /> :
-										item.attributes.Source === 'Blog' ?
-											<LinkPreview
-												url={item.attributes.URL}
-											/> :
-											item.attributes.Source === 'Youtube' ? <YouTubeEmbed placeholderDisabled url={item.attributes.URL} width="100%" /> :
-												<h3>Not a blog or tweet</h3>}
+									{/* <Link to={item.attributes.URL} target='_blank'>{item.attributes.URL}</Link> */}
+									<div style={{ display: 'flex', justifyContent: 'center' }}>
+										{item.attributes.Source === 'Twitter' ? <TwitterEmbed placeholderDisabled url={item.attributes.URL} width="100%" /> :
+											item.attributes.Source === 'Blog' ?
+												<LinkPreview
+													url={item.attributes.URL}
+												/> :
+												item.attributes.Source === 'Youtube' ? <YouTubeEmbed placeholderDisabled url={item.attributes.URL} width="100%" /> :
+													<h3>Not a blog or tweet</h3>}
+									</div>
 								</div>
-							</div>
-						))
-						}
-					</div>
-				)}
+							))
+							}
+						</div>
+					)}
+				</div>
 			</div>
 		</React.Fragment>
 	)
