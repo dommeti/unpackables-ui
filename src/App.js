@@ -8,7 +8,7 @@ import Header from './components/Header/Header'
 
 // apollo client
 const client = new ApolloClient({
-	uri: 'http://localhost:1337/api/nuggets',
+	uri: 'http://localhost:1337/graphql',
 	cache: new InMemoryCache()
 })
 
