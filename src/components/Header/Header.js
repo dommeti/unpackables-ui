@@ -27,7 +27,7 @@ export default function Header() {
 			<h1>A collection of "how I taught myself ..." stories</h1>
 			<nav className='category-links'>
 				{data.categories.data.map(category => (
-					<Link key={category.id} to={`/category/${category.attributes.slug}`}>{category.attributes.name}</Link>
+					<Link key={category.id} to={`/${category.attributes.slug}`}>{category.attributes.name}</Link>
 				))
 				}
 			</nav>

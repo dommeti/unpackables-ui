@@ -1,9 +1,9 @@
 import React from 'react'
-import './HomePage.scss'
-
 import { TwitterEmbed, YouTubeEmbed } from 'react-social-media-embed'
 import LinkPreview from '../../hooks/LinkPreview'
 import { useQuery, gql } from '@apollo/client'
+
+import './HomePage.scss'
 
 const NUGGETS = gql`
 	query GetNUGGETS {

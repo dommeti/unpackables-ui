@@ -21,7 +21,7 @@ function App() {
 					<Header />
 					<Routes>
 						<Route exact path="/" element={<HomePage />} />
-						<Route path="/category/:slug" element={Category} />
+						<Route path="/:slug" element={<Category />} />
 					</Routes>
 				</ApolloProvider>
 			</Router>
