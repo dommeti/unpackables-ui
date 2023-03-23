@@ -5,6 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 // page and layout imports
 import HomePage from './pages/HomePage/HomePage'
 import Header from './components/Header/Header'
+import Category from './pages/Category/Category'
 
 // apollo client
 const client = new ApolloClient({
@@ -20,10 +21,11 @@ function App() {
 					<Header />
 					<Routes>
 						<Route exact path="/" element={<HomePage />} />
+						<Route path="/category/:slug" element={Category} />
 					</Routes>
 				</ApolloProvider>
 			</Router>
-		</div>
+		</div >
 	)
 }
 
