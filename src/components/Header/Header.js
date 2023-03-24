@@ -4,7 +4,7 @@ import { useQuery, gql } from '@apollo/client'
 
 const CATEGORIES = gql`
  query GetCategories {
-	categories {
+	categories(sort: "name") {
     data {
       attributes {
         name
