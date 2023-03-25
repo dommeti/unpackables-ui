@@ -7,7 +7,7 @@ import './HomePage.scss'
 
 const NUGGETS = gql`
 	query GetNUGGETS {
-		nuggets(sort: "date_published:desc") {
+		nuggets(sort: "date_published:desc", pagination: { limit: 100 }) {
 			data {
 				attributes {
 					title,
